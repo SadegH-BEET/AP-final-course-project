@@ -13,12 +13,12 @@
         <Button layoutX="36.0" layoutY="25.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="115.0" text="Admin Login" onMouseClicked="#moveToAdminLoginMenu"/>
         <Button layoutX="175.0" layoutY="25.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="115.0" text="Restaurant Login" onMouseClicked="#moveToRestauraantLoginMenu"/>
         <TextField layoutX="191.0" layoutY="167.0" prefHeight="26.0" prefWidth="217.0" fx:id="textField"/>
-        <PasswordField layoutX="191.0" layoutY="211.0" prefHeight="26.0" prefWidth="218.0" />
-        <Button layoutX="321.0" layoutY="255.0" mnemonicParsing="false" text="Register" />
-        <Button layoutX="221.0" layoutY="254.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="59.0" text="Login" />
+        <PasswordField layoutX="191.0" layoutY="211.0" prefHeight="26.0" prefWidth="218.0" fx:id="passwordField"/>
+        <Button layoutX="321.0" layoutY="255.0" mnemonicParsing="false" text="Register" onMouseClicked="#moveToCustomerRegister"/>
+        <Button layoutX="221.0" layoutY="254.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="59.0" text="Login" onMouseClicked="#submit"/>
         <Text layoutX="144.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" wrappingWidth="37.60003662109375" />
         <Text layoutX="133.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="password:" wrappingWidth="59.200000000000045" />
-        <Text layoutX="380.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Login/Register" wrappingWidth="190.936767578125">
+        <Text layoutX="380.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Login" wrappingWidth="190.936767578125">
             <font>
                 <Font name="System Bold" size="16.0" />
             </font>

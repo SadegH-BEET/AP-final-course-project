@@ -11,7 +11,7 @@ import java.net.URL;
 public class CustomerRegister extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        URL url=AdminLoginMenu.class.getResource("/FXML/CustomerMenu.fxml");
+        URL url=AdminLoginMenu.class.getResource("/FXML/CustomerRegister.fxml");
         AnchorPane anchorPane= FXMLLoader.load(url);
         Scene scene = new Scene(anchorPane);
         stage.setScene(scene);
