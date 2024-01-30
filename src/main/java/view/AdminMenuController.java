@@ -1,22 +1,28 @@
 package view;
 
 import javafx.scene.control.Alert;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import model.Restaurant;
 
 public class AdminMenuController {
-    public Text nameTextField;
-    public Text passwordPasswordField;
-    public Text addressTextField;
+
+
+    public TextField nameTextField;
+    public TextField passwordPasswordField;
+    public TextField addressTextField;
     public Text managerTextField;
 
     public void showListOfAllRestaurants(MouseEvent mouseEvent) {
         System.out.println("==============================");
         System.out.println("List of All restaurants:");
+
         for (int i=0;i< Restaurant.allRestaurants.size();i++){
             System.out.print(i+1);
-            System.out.print(" "+Restaurant.allRestaurants.get(i).getName()+"  "+Restaurant.allRestaurants.get(i).getPassword()+"  "+Restaurant.allRestaurants.get(i).getManager());
+            System.out.print(" Name: "+Restaurant.allRestaurants.get(i).getName()+
+                    "  Password: "+Restaurant.allRestaurants.get(i).getPassword()+
+                    "  Manager: "+Restaurant.allRestaurants.get(i).getManager());
             System.out.println();
         }
         System.out.println("==============================");
