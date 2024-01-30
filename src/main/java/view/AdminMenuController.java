@@ -12,7 +12,8 @@ public class AdminMenuController {
     public TextField nameTextField;
     public TextField passwordPasswordField;
     public TextField addressTextField;
-    public Text managerTextField;
+    public TextField managerTextField;
+
 
     public void showListOfAllRestaurants(MouseEvent mouseEvent) {
         System.out.println("==============================");

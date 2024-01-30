@@ -1,1 +1,13 @@
+4
+burger
+10
 0
+sandwitch
+20
+0
+gharchpolo
+30
+3
+baghalipolo
+12
+1

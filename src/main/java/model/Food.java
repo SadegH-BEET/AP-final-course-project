@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Food {
-    private static List<Food> listOfAllFoods =new ArrayList<>();
+    public static List<Food> listOfAllFoods =new ArrayList<>();
     public static long idcounter=0;
 
 

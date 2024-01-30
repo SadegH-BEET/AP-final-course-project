@@ -20,10 +20,16 @@ public class RestaurantMenuController {
         new Main().start(Main.stage);
     }
 
-    public void showFoodMenu(MouseEvent mouseEvent) {
-        Restaurant restaurant=Restaurant.currentRestaurant;
-        RestaurantController.printFoodMenu();
+    public void showFoodMenu(){
+        System.out.println("==============================");
+        System.out.println(Restaurant.currentRestaurant.getName() +" restaurant food menu");
+        for(int i=0;i<Restaurant.currentRestaurant.getFoodMennu().size();i++){
 
+            System.out.println(i+
+                    " food name: "+Restaurant.currentRestaurant.getFoodMennu().get(i).getName()+
+                    " cost: "+Restaurant.currentRestaurant.getFoodMennu().get(i).getCost());
+        }
+        System.out.println("==============================");
     }
 
     public void showFinancialBalance(MouseEvent mouseEvent) {
@@ -56,5 +62,9 @@ public class RestaurantMenuController {
     public void withdrawFinancialBalance(MouseEvent mouseEvent) {
         Restaurant.currentRestaurant.setFinancialBalance(0L);
         showFinancialBalanceField.setText("0");
+    }
+
+    public void showFoods(MouseEvent mouseEvent) {
+        System.out.println(Restaurant.currentRestaurant.getId());
     }
 }

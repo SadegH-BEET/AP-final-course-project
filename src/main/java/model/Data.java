@@ -56,6 +56,7 @@ public class Data {
                 long cost=  Long.parseLong(reader.readLine());
                 long restaurantId= Long.parseLong(reader.readLine());
                 Restaurant restaurant= Restaurant.searchRestaurantById(restaurantId);
+                System.out.println("Id:" + restaurantId +restaurant.getName());
                 Food food=new Food(name,cost,restaurant);
 
             }
@@ -131,6 +132,9 @@ public class Data {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println(Restaurant.allRestaurants);
+        System.out.println(Food.listOfAllFoods);
+        System.out.println(Customer.allCustomers);
 
 
     }

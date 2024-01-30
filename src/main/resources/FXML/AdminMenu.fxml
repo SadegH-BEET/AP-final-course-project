@@ -28,6 +28,6 @@
     <TextField layoutX="112.0" layoutY="258.0" prefHeight="26.0" prefWidth="206.0" fx:id="passwordPasswordField"/>
     <TextField layoutX="111.0" layoutY="303.0" prefHeight="26.0" prefWidth="206.0" fx:id="addressTextField"/>
     <Button layoutX="465.0" layoutY="267.0" mnemonicParsing="false" text="Add" onMouseClicked="#addNewRestaurant"/>
-    <TextField layoutX="112.0" layoutY="347.0" prefHeight="26.0" prefWidth="206.0" />
-    <Text layoutX="51.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="manager:" wrappingWidth="56.3511962890625" fx:id="managerTextField"/>
+    <TextField layoutX="112.0" layoutY="347.0" prefHeight="26.0" prefWidth="206.0" fx:id="managerTextField"/>
+    <Text layoutX="51.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="manager:" wrappingWidth="56.3511962890625" />
 </AnchorPane>

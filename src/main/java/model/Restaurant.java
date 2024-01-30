@@ -34,12 +34,12 @@ public class Restaurant {
     public static Restaurant searchRestaurantById(long restaurantId) {
         int index = 0;
         for (int i = 0; i < allRestaurants.size(); i++) {
-            if (allRestaurants.get(i).id==restaurantId ){
+            if (Restaurant.allRestaurants.get(i).id==restaurantId ){
                 index = i;
                 break;
             }
         }
-        return allRestaurants.get(index);
+        return Restaurant.allRestaurants.get(index);
 
     }
 
