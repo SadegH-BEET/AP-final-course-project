@@ -5,7 +5,6 @@ import java.util.List;
 
 public class Restaurant {
     private static List<Restaurant> allRestaurants=new ArrayList<>();
-    private static int numberOfAllRestaurants;
     public static long idcounter=0;
     public static Restaurant currentRestaurant=null;
 
@@ -72,9 +71,6 @@ public class Restaurant {
         Restaurant.allRestaurants = allRestaurants;
     }
 
-    public static void setNumberOfAllRestaurants(int numberOfAllRestaurants) {
-        Restaurant.numberOfAllRestaurants = numberOfAllRestaurants;
-    }
 
     public void setPassword(String password) {
         this.password = password;
