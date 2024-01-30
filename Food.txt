@@ -1,13 +1,7 @@
-4
-burger
+2
+baghaliplol
 10
 0
-sandwitch
-20
-0
-gharchpolo
+pizza
 30
-3
-baghalipolo
-12
-1
+0

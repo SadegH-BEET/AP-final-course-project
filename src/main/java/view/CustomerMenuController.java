@@ -60,6 +60,7 @@ public class CustomerMenuController {
             Restaurant restaurant=food.getRestaurant();
             Order order =new Order(food,Customer.currentCustomer,restaurant);
             if (Customer.currentCustomer.payOrder(order)){
+                showFiancialBalanceTextField.setText(String.valueOf(Customer.currentCustomer.getFinancialBalance()));
 
             }
             else{

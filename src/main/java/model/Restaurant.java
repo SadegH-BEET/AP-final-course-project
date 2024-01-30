@@ -176,6 +176,7 @@ public class Restaurant {
             System.out.println(i+
                     " food name " + previousOrder.get(i).getFood().getName());
         }
+        System.out.println("==============================");
 
 
     }
