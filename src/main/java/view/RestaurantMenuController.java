@@ -24,7 +24,7 @@ public class RestaurantMenuController {
         System.out.println("==============================");
         System.out.println(Restaurant.currentRestaurant.getName() +" restaurant food menu");
         for(int i=0;i<Restaurant.currentRestaurant.getFoodMennu().size();i++){
-
+            System.out.println("  " + Restaurant.currentRestaurant.getFoodMennu().size());
             System.out.println(i+
                     " food name: "+Restaurant.currentRestaurant.getFoodMennu().get(i).getName()+
                     " cost: "+Restaurant.currentRestaurant.getFoodMennu().get(i).getCost());

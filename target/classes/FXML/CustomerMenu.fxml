@@ -15,12 +15,12 @@
             prefHeight="400.0" prefWidth="600.0">
     <children>
         <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="logOut" onMouseClicked="#logOut"/>
-        <Button layoutX="419.0" layoutY="13.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="167.0" text="Show list of foods" />
+        <Button layoutX="419.0" layoutY="13.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="167.0" text="Show list of foods" onMouseClicked="#showListOfFoods"/>
         <Button layoutX="14.0" layoutY="59.0" mnemonicParsing="false" text="Show financial Balance" onMouseClicked="#showFinancialBalance"/>
         <Text layoutX="166.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" fx:id="showFiancialBalanceTextField"/>
         <TextField layoutX="49.0" layoutY="187.0" promptText="cart number" fx:id="cartNumberTextFiled" />
-        <Button layoutX="419.0" layoutY="51.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="167.0" text="Show list of previous orders" />
-        <Button layoutX="419.0" layoutY="85.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="167.0" text="show cart" />
+        <Button layoutX="419.0" layoutY="51.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="167.0" text="Show list of previous orders" onMouseClicked="#showListOfPreviousOrders"/>
+        <Button layoutX="419.0" layoutY="85.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="167.0" text="show cart" onMouseClicked="#showCart"/>
         <Line endX="458.0" endY="-1.52587890625E-5" layoutX="141.0" layoutY="161.0" startX="-141.99998474121094" startY="-1.52587890625E-5" />
         <Text layoutX="14.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="increase financial balance">
             <font>
