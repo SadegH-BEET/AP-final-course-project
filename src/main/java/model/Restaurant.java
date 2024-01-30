@@ -17,8 +17,8 @@ public class Restaurant {
     private String password;
     private String address;
     private long financialBalance=0;
-    private List<Food> foodMennu;
-    private List<Order> previousOrder;
+    private List<Food> foodMennu =new ArrayList<>();
+    private List<Order> previousOrder=new ArrayList<>();
 
     public Restaurant(String name, String manager, String address, String password) {
         this.id=idcounter;
