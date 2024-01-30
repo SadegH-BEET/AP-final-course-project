@@ -16,10 +16,7 @@ public class MainController {
     public PasswordField passwordField;
 
     public void submit(MouseEvent mouseEvent) throws Exception {
-       /* if(textField.getText().length() < 6){
-            Alert alert=new Alert(Alert.AlertType.WARNING);
-            alert.showAndWait();
-        }*/
+
         String name=textField.getText();
         String password=passwordField.getText();
         boolean valid= CustomerController.isCustomerValid(name,password);
@@ -30,6 +27,7 @@ public class MainController {
         else{
             new CustomerMenu().start(Main.stage);
             Customer.currentCustomer=CustomerController.searchRestaurantByName(name);
+            new CustomerMenu().start(Main.stage);
         }
 
     }
@@ -41,5 +39,9 @@ public class MainController {
 
     public void moveToRestauraantLoginMenu(MouseEvent mouseEvent) throws Exception {
         new RestaurantLoginMenu().start(Main.stage);
+    }
+
+    public void moveToCustomerRegister(MouseEvent mouseEvent) throws Exception {
+        new CustomerRegister().start(Main.stage);
     }
 }
