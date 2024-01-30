@@ -156,6 +156,27 @@ public class Restaurant {
     public void withdrawFinancialBalnce(String numcart,long value){
         this.setFinancialBalance(this.getFinancialBalance()-value);
     }
+    public void printFoodMenu(){
+        System.out.println("==============================");
+        System.out.println(this.name +" restaurant food menu");
+        for(int i=0;i<this.foodMennu.size();i++){
+
+            System.out.println(i+
+                    " food name: "+foodMennu.get(i).getName()+
+                    " cost: "+foodMennu.get(i).getCost());
+        }
+        System.out.println("==============================");
+    }
 
 
+    public void printPreviousOrder() {
+        System.out.println("==============================");
+        System.out.println(this.name +" restaurant previous orders");
+        for(int i=0;i<this.previousOrder.size();i++){
+            System.out.println(i+
+                    " food name " + previousOrder.get(i).getFood().getName());
+        }
+
+
+    }
 }

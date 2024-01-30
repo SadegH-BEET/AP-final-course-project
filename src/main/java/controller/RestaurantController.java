@@ -27,4 +27,11 @@ public class RestaurantController {
         }
         return Customer.allCustomers.get(index);
     }
+    public static void printFoodMenu(){
+        Restaurant.currentRestaurant.printFoodMenu();
+    }
+
+    public static void printPreviousOrders() {
+        Restaurant.currentRestaurant.printPreviousOrder();
+    }
 }
