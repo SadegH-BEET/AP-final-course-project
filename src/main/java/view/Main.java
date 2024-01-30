@@ -7,6 +7,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import model.Data;
 
 import java.net.URL;
 import java.util.Scanner;
@@ -14,7 +15,9 @@ import java.util.Scanner;
 public class Main extends Application {
     public static Stage stage;
     public static void main(String[] args){
+        Data.loadData();
         launch(args);
+        Data.downLoadData();
 
     }
 
