@@ -22,6 +22,14 @@ public class Food {
         listOfAllFoods.add(this);
 
     }
+    public static Food findFoodByName(String name){
+    for(int i=0;i<Food.listOfAllFoods.size();i++){
+        if(name.equals(Food.listOfAllFoods.get(i).getName())){
+            return Food.listOfAllFoods.get(i);
+        }
+    }
+    return null;
+    }
 
     public static List<Food> getListOfAllFoods() {
         return listOfAllFoods;

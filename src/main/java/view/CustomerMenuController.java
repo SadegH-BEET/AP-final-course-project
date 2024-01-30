@@ -1,9 +1,13 @@
 package view;
 
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import model.Customer;
+import model.Food;
+import model.Order;
+import model.Restaurant;
 
 public class CustomerMenuController {
 
@@ -11,6 +15,7 @@ public class CustomerMenuController {
     public TextField cartNumberTextFiled;
     public TextField valueTextField;
     public TextField newAddressTextField;
+    public TextField foodNameTextField;
 
     public void logOut(MouseEvent mouseEvent) throws Exception {
         Customer.currentCustomer=null;
@@ -46,5 +51,28 @@ public class CustomerMenuController {
 
     public void showCart(MouseEvent mouseEvent) {
         Customer.showCart(Customer.currentCustomer);
+    }
+
+    public void buyFood(MouseEvent mouseEvent) {
+        String foodName=foodNameTextField.getText();
+        Food food=Food.findFoodByName(foodName);
+        if(food != null){
+            Restaurant restaurant=food.getRestaurant();
+            Order order =new Order(food,Customer.currentCustomer,restaurant);
+            if (Customer.currentCustomer.payOrder(order)){
+
+            }
+            else{
+                Alert alert=new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("Not enough money");
+                alert.showAndWait();
+            }
+        }
+        else{
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Food not found!");
+            alert.showAndWait();
+        }
+
     }
 }

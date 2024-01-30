@@ -43,7 +43,7 @@
                 <Font size="14.0" />
             </font>
         </Text>
-        <TextField layoutX="51.0" layoutY="330.0" promptText="food name" />
-        <Button layoutX="491.0" layoutY="330.0" mnemonicParsing="false" text="Buy" />
+        <TextField layoutX="51.0" layoutY="330.0" promptText="food name" fx:id="foodNameTextField"/>
+        <Button layoutX="491.0" layoutY="330.0" mnemonicParsing="false" text="Buy" onMouseClicked="#buyFood"/>
     </children>
 </AnchorPane>

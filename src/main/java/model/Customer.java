@@ -158,16 +158,18 @@ public class Customer {
     public List<Food> showListOfFoods(){
         return Food.getListOfAllFoods();
     }
-    public void payOrder(Order order){
-        long financBalance=this.getFinancialBalance();
-        long cost=order.getFood().getCost();
-        if(financBalance>=cost){
-            this.setFinancialBalance(financBalance-cost);
+    public boolean payOrder(Order order) {
+        long financBalance = this.getFinancialBalance();
+        long cost = order.getFood().getCost();
+        if (financBalance >= cost) {
+            this.setFinancialBalance(financBalance - cost);
             this.previousOrders.add(order);
             this.cart.remove(order);
             order.getFood().getRestaurant().getPreviousOrder().add(order);
-            order.getFood().getRestaurant().setFinancialBalance(order.getFood().getRestaurant().getFinancialBalance()+cost);
-        }
+            order.getFood().getRestaurant().setFinancialBalance(order.getFood().getRestaurant().getFinancialBalance() + cost);
+            return true;
+        } else
+            return false;
     }
 
 }
