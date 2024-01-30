@@ -32,4 +32,19 @@ public class CustomerMenuController {
         String newAddress=newAddressTextField.getText();
         Customer.currentCustomer.changeAddress(newAddress);
     }
+
+    public void showListOfFoods(MouseEvent mouseEvent) {
+        Customer.showListOfFood();
+
+
+    }
+
+    public void showListOfPreviousOrders(MouseEvent mouseEvent)
+    {
+        Customer.showPreviousOrders(Customer.currentCustomer);
+    }
+
+    public void showCart(MouseEvent mouseEvent) {
+        Customer.showCart(Customer.currentCustomer);
+    }
 }

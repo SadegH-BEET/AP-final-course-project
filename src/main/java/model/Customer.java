@@ -40,6 +40,39 @@ public class Customer {
         }
         return allCustomers.get(index);
     }
+    public static void showCart(Customer customer){
+        System.out.println("=====================");
+        System.out.println("Food Cart");
+        for (int i=0;i<=customer.getCart().size();i++){
+            System.out.println(i +
+                    " food name " + customer.getCart().get(i).getFood().getName()+
+                    " food cost " + customer.getCart().get(i).getFood().getCost()+
+                    " restaurant name " + customer.getCart().get(i).getFood().getRestaurant().getName());
+        }
+        System.out.println("=====================");
+    }
+    public static void showPreviousOrders(Customer customer){
+        System.out.println("=====================");
+        System.out.println("previous order");
+        for (int i=0;i<=customer.getPreviousOrders().size();i++){
+            System.out.println(i +
+                            " food name " + customer.getPreviousOrders().get(i).getFood().getName()+
+                            " food cost " + customer.getPreviousOrders().get(i).getFood().getCost()+
+                    " restaurant name " + customer.getPreviousOrders().get(i).getFood().getRestaurant().getName());
+        }
+        System.out.println("=====================");
+    }
+    public static void showListOfFood(){
+        System.out.println("=====================");
+        System.out.println("Food list");
+        for (int i=0;i<=Food.listOfAllFoods.size();i++){
+            System.out.println(i +
+                            " food name " + Food.listOfAllFoods.get(i).getName()+
+                            " food cost " + Food.listOfAllFoods.get(i).getCost()+
+                            " restaurant name " + Food.listOfAllFoods.get(i).getRestaurant().getName());
+        }
+        System.out.println("=====================");
+    }
 
 
     public long getId() {
