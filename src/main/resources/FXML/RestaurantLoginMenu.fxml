@@ -13,8 +13,8 @@
             fx:controller="view.RestaurantLoginMenuController"
             prefHeight="400.0" prefWidth="600.0">
     <children>
-        <Button layoutX="36.0" layoutY="25.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="115.0" text="Admin Login" />
-        <Button layoutX="175.0" layoutY="25.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="115.0" text="customer Login" />
+        <Button layoutX="36.0" layoutY="25.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="115.0" text="Admin Login" onMouseClicked="#moveToAdminLoginMenu"/>
+        <Button layoutX="175.0" layoutY="25.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="115.0" text="customer Login" onMouseClicked="#moveToCustomerLoginMenu" />
         <TextField layoutX="191.0" layoutY="167.0" prefHeight="26.0" prefWidth="217.0" />
         <PasswordField layoutX="191.0" layoutY="211.0" prefHeight="26.0" prefWidth="218.0" />
         <Button layoutX="270.0" layoutY="255.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="59.0" text="Login" />
