@@ -26,8 +26,8 @@ public class MainController {
             alert.showAndWait();
         }
         else{
-            new CustomerMenu().start(Main.stage);
-            Customer.currentCustomer=CustomerController.searchRestaurantByName(name);
+
+            Customer.currentCustomer=CustomerController.searchCustomerByName(name);
             new CustomerMenu().start(Main.stage);
         }
 

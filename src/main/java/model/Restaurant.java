@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Restaurant {
-    private static List<Restaurant> allRestaurants=new ArrayList<>();
+    public static List<Restaurant> allRestaurants=new ArrayList<>();
     public static long idcounter=0;
     public static Restaurant currentRestaurant=null;
 

@@ -18,7 +18,7 @@ public class Customer {
     private List<Order> previousOrders=new ArrayList<>();
     private List<Order> cart=new ArrayList<>();
 
-    public static Customer searchRestaurantByName(String customerName) {
+    public static Customer searchCustomerByName(String customerName) {
         int index = 0;
         for (int i = 0; i < allCustomers.size(); i++) {
             if ((allCustomers.get(i).name).equals(customerName)) {
@@ -40,6 +40,7 @@ public class Customer {
         }
         return allCustomers.get(index);
     }
+
 
     public long getId() {
         return id;

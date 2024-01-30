@@ -6,7 +6,7 @@ public class CustomerController {
 
     public static boolean isCustomerValid(String name,String password){
         boolean found=false;
-        Customer customer=Customer.searchRestaurantByName(name);
+        Customer customer=Customer.searchCustomerByName(name);
         if(customer==null)
             found=false;
         else {
@@ -18,7 +18,7 @@ public class CustomerController {
         return found;
     }
 
-    public static Customer searchRestaurantByName(String customerName) {
+    public static Customer searchCustomerByName(String customerName) {
         int index = 0;
         for (int i = 0; i < Customer.allCustomers.size(); i++) {
             if ((Customer.allCustomers.get(i).getName()).equals(customerName)) {
