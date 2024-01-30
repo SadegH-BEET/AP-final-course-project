@@ -23,6 +23,7 @@ public class MainController {
         if(!valid){
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setContentText("password is not valid or customer is not exist!");
+            alert.showAndWait();
         }
         else{
             new CustomerMenu().start(Main.stage);

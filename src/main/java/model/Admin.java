@@ -3,14 +3,14 @@ package model;
 import java.util.List;
 
 public class Admin {
-    private final String name="Sadegh";
-    private final String password="1234";
+    private static final String name="Sadegh";
+    private static final String password="1234";
 
-    public String getName() {
+    public static String getName() {
         return name;
     }
 
-    public String getPassword() {
+    public static String getPassword() {
         return password;
     }
     public List<Restaurant> showListOfAllRestaurants(){
