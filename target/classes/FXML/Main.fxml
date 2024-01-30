@@ -3,22 +3,26 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx/16"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="view.MainController"
+            prefHeight="400.0" prefWidth="600.0">
+    <children>
+        <Button layoutX="36.0" layoutY="25.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="115.0" text="Admin Login" />
+        <Button layoutX="175.0" layoutY="25.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="115.0" text="Restaurant Login" />
+        <TextField layoutX="191.0" layoutY="167.0" prefHeight="26.0" prefWidth="217.0" />
+        <PasswordField layoutX="191.0" layoutY="211.0" prefHeight="26.0" prefWidth="218.0" />
+        <Button layoutX="321.0" layoutY="255.0" mnemonicParsing="false" text="Register" />
+        <Button layoutX="221.0" layoutY="254.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="59.0" text="Login" />
+        <Text layoutX="144.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" wrappingWidth="37.60003662109375" />
+        <Text layoutX="133.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="password:" wrappingWidth="59.200000000000045" />
+        <Text layoutX="380.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Login/Register" wrappingWidth="190.936767578125">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Text>
+    </children>
 
-
-<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
-        fx:controller="view.MainController">
-   <children>
-      <TitledPane animated="false" prefHeight="326.0" prefWidth="554.0" text="MainMenu">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-               <children>
-                  <TextField layoutX="176.0" layoutY="68.0" prefHeight="26.0" prefWidth="199.0" text="your name?" fx:id="username"/>
-                  <TextField layoutX="176.0" layoutY="104.0" prefHeight="26.0" prefWidth="199.0" text="your password?" />
-                   <Button layoutX="242.0" layoutY="137.0" mnemonicParsing="false" text="submit"
-                           onMouseClicked="#submit"/>
-               </children>
-            </AnchorPane>
-        </content>
-      </TitledPane>
-   </children>
-</VBox>
+</AnchorPane>
