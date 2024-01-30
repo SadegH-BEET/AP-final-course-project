@@ -1,6 +1,7 @@
 package view;
 
 import controller.RestaurantController;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
@@ -12,6 +13,7 @@ public class RestaurantMenuController {
     public TextField foodNameTextField;
     public TextField foodCostTextField;
     public TextField newAddressTextField;
+    public TextField cartNumberTextField;
 
     public void logOut(MouseEvent mouseEvent) throws Exception {
         Restaurant.currentRestaurant=null;
@@ -39,7 +41,20 @@ public class RestaurantMenuController {
     }
 
     public void changeAddress(MouseEvent mouseEvent) {
-        String newAddress=newAddressTextField.getText();
-        Restaurant.currentRestaurant.setAddress(newAddress);
+        if(newAddressTextField.getText().equals("")){
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("add new address!");
+            alert.showAndWait();
+        }
+        else{
+            String newAddress=newAddressTextField.getText();
+            Restaurant.currentRestaurant.setAddress(newAddress);
+        }
+
+    }
+
+    public void withdrawFinancialBalance(MouseEvent mouseEvent) {
+        Restaurant.currentRestaurant.setFinancialBalance(0L);
+        showFinancialBalanceField.setText("0");
     }
 }
