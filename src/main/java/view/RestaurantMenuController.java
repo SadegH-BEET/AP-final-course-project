@@ -20,18 +20,6 @@ public class RestaurantMenuController {
         new Main().start(Main.stage);
     }
 
-    public void showFoodMenu(){
-        System.out.println("==============================");
-        System.out.println(Restaurant.currentRestaurant.getName() +" restaurant food menu");
-        for(int i=0;i<Restaurant.currentRestaurant.getFoodMennu().size();i++){
-            System.out.println("  " + Restaurant.currentRestaurant.getFoodMennu().size());
-            System.out.println(i+
-                    " food name: "+Restaurant.currentRestaurant.getFoodMennu().get(i).getName()+
-                    " cost: "+Restaurant.currentRestaurant.getFoodMennu().get(i).getCost());
-        }
-        System.out.println("==============================");
-    }
-
     public void showFinancialBalance(MouseEvent mouseEvent) {
         showFinancialBalanceField.setText(String.valueOf(Restaurant.currentRestaurant.getFinancialBalance()));
     }
@@ -43,7 +31,8 @@ public class RestaurantMenuController {
     public void addNewFood(MouseEvent mouseEvent) {
         String name=foodNameTextField.getText();
         long cost=Long.parseLong(foodCostTextField.getText());
-        new Food(name,cost,Restaurant.currentRestaurant);
+        Food food = new Food(name,cost,Restaurant.currentRestaurant);
+        Restaurant.currentRestaurant.getFoodMennu().add(food);
     }
 
     public void changeAddress(MouseEvent mouseEvent) {
@@ -67,6 +56,7 @@ public class RestaurantMenuController {
     public void showFoods(MouseEvent mouseEvent) {
 
         System.out.println("==============================");
+        System.out.println(Restaurant.currentRestaurant.getName() +" restaurant food menu");
         for(int i=0;i<Restaurant.currentRestaurant.getFoodMennu().size();i++){
             System.out.print(i+1);
             System.out.println(" foodname: " + Restaurant.currentRestaurant.getFoodMennu().get(i).getName() +

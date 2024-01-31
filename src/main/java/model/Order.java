@@ -37,8 +37,5 @@ public class Order {
         this.food = food;
         this.customer = customer;
         this.restaurant = food.getRestaurant();
-        List<Order> cart=this.customer.getCart();
-        cart.add(this);
-        customer.setCart(cart);
     }
 }

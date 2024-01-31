@@ -126,7 +126,8 @@ public class Customer {
         System.out.println("=====================");
         System.out.println("Foodlist:");
         for (int i=0;i<Food.listOfAllFoods.size();i++){
-            System.out.println(i +
+            System.out.print(i+1);
+            System.out.println(
                     " foodname: " + Food.listOfAllFoods.get(i).getName()+
                     " foodcost: " + Food.listOfAllFoods.get(i).getCost()+
                     " restaurantname: " + Food.listOfAllFoods.get(i).getRestaurant().getName());
