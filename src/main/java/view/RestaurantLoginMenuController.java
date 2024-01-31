@@ -9,6 +9,10 @@ import javafx.scene.input.MouseEvent;
 import model.Customer;
 import model.Restaurant;
 
+/**
+ * this class is a class controller for restaurant login menu
+ */
+
 public class RestaurantLoginMenuController {
     public TextField TextField;
     public PasswordField PasswordField;
@@ -22,18 +26,15 @@ public class RestaurantLoginMenuController {
     }
 
     public void submit(MouseEvent mouseEvent) throws Exception {
-        //System.out.println(TextField.getText());
-        //System.out.println(PasswordField.getText());
-        String name=TextField.getText();
-        String password=PasswordField.getText();
-        Restaurant restaurant=searchNameRestaurant(name);
-        if(restaurant!=null){
+        String name = TextField.getText();
+        String password = PasswordField.getText();
+        Restaurant restaurant = searchNameRestaurant(name);
+        if (restaurant != null) {
             new RestaurantMenu().start(Main.stage);
-            Restaurant.currentRestaurant=restaurant;
+            Restaurant.currentRestaurant = restaurant;
 
-        }
-        else{
-            Alert alert=new Alert(Alert.AlertType.ERROR);
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("password is not valid or restaurant is not exist!");
             alert.showAndWait();
 
@@ -41,28 +42,14 @@ public class RestaurantLoginMenuController {
 
 
     }
-    public Restaurant searchNameRestaurant(String name){
-        Restaurant restaurant=null;
-        for(int i=0 ;i<Restaurant.allRestaurants.size();i++){
-            if(Restaurant.allRestaurants.get(i).getName().equals(name))
-                restaurant= Restaurant.allRestaurants.get(i);
+
+    public Restaurant searchNameRestaurant(String name) {
+        Restaurant restaurant = null;
+        for (int i = 0; i < Restaurant.allRestaurants.size(); i++) {
+            if (Restaurant.allRestaurants.get(i).getName().equals(name))
+                restaurant = Restaurant.allRestaurants.get(i);
         }
         return restaurant;
     }
 
-   /* public void submit(MouseEvent mouseEvent) throws Exception {
-        String name=TextField.getText();
-        String password=PasswordField.getText();
-        boolean valid= RestaurantController.isRestaurantValid(name,password);
-        if(!valid){
-            Alert alert=new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("password is not valid or restaurant is not exist!");
-            alert.showAndWait();
-        }
-        else{
-            Restaurant.currentRestaurant =Restaurant.searchRestaurantByName(name);
-            new CustomerMenu().start(Main.stage);
-        }
-
-    }*/
 }

@@ -3,9 +3,13 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * this class is model Food
+ */
+
 public class Food {
-    public static List<Food> listOfAllFoods =new ArrayList<>();
-    public static long idcounter=0;
+    public static List<Food> listOfAllFoods = new ArrayList<>();
+    public static long idcounter = 0;
 
 
     private long id;
@@ -13,12 +17,19 @@ public class Food {
     private long cost;
     private Restaurant restaurant;
 
+    /**
+     * this method is constructor
+     * @param name
+     * @param cost
+     * @param restaurant
+     */
+
     public Food(String name, long cost, Restaurant restaurant) {
-        this.id=idcounter;
+        this.id = idcounter;
         idcounter++;
         this.name = name;
         this.cost = cost;
-        this.restaurant=restaurant;
+        this.restaurant = restaurant;
         listOfAllFoods.add(this);
 
     }
@@ -64,31 +75,31 @@ public class Food {
         this.restaurant = restaurant;
     }
 
-    public static Food findFoodByName(String name){
-        for(int i=0;i<Food.listOfAllFoods.size();i++){
-            if(name.equals(Food.listOfAllFoods.get(i).getName())){
+    /**
+     * this method search food by its name in list of all Foods
+     * @param name
+     * @return
+     */
+
+    public static Food findFoodByName(String name) {
+        for (int i = 0; i < Food.listOfAllFoods.size(); i++) {
+            if (name.equals(Food.listOfAllFoods.get(i).getName())) {
                 return Food.listOfAllFoods.get(i);
             }
         }
         return null;
     }
 
-
-    public static Food searchFoodByName(String foodName) {
-        int index=0;
-        for(int i=0;i<listOfAllFoods.size();i++){
-            if (listOfAllFoods.get(i).getName().equals(foodName)){
-                index=i;
-                break;
-            }
-        }
-        return listOfAllFoods.get(index);
-    }
+    /**
+     * this method search food by its ID in list of all Foods
+     * @param foodId
+     * @return
+     */
 
     public static Food searchFoodById(long foodId) {
         int index = 0;
         for (int i = 0; i < listOfAllFoods.size(); i++) {
-            if (listOfAllFoods.get(i).id==foodId ){
+            if (listOfAllFoods.get(i).id == foodId) {
                 index = i;
                 break;
             }

@@ -9,6 +9,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import model.Customer;
 
+/**
+ * this is main class controller
+ * logic of main menu
+ */
+
 public class MainController {
 
 
@@ -17,17 +22,16 @@ public class MainController {
 
     public void submit(MouseEvent mouseEvent) throws Exception {
 
-        String name=textField.getText();
-        String password=passwordField.getText();
-        boolean valid= CustomerController.isCustomerValid(name,password);
-        if(!valid){
-            Alert alert=new Alert(Alert.AlertType.ERROR);
+        String name = textField.getText();
+        String password = passwordField.getText();
+        boolean valid = CustomerController.isCustomerValid(name, password);
+        if (!valid) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("password is not valid or customer is not exist!");
             alert.showAndWait();
-        }
-        else{
+        } else {
 
-            Customer.currentCustomer=CustomerController.searchCustomerByName(name);
+            Customer.currentCustomer = CustomerController.searchCustomerByName(name);
             new CustomerMenu().start(Main.stage);
         }
 

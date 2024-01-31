@@ -5,37 +5,44 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.CustomerMenuController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="view.CustomerMenuController">
     <children>
-        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#logOut" text="logOut" />
-        <Button layoutX="419.0" layoutY="13.0" mnemonicParsing="false" onMouseClicked="#showListOfFoods" prefHeight="26.0" prefWidth="167.0" text="Show list of foods" />
-        <Button layoutX="14.0" layoutY="59.0" mnemonicParsing="false" onMouseClicked="#showFinancialBalance" text="Show financial Balance" />
-        <Text fx:id="showFiancialBalanceTextField" layoutX="166.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
-        <TextField fx:id="cartNumberTextFiled" layoutX="49.0" layoutY="187.0" promptText="cart number" />
-        <Button layoutX="419.0" layoutY="51.0" mnemonicParsing="false" onMouseClicked="#showListOfPreviousOrders" prefHeight="26.0" prefWidth="167.0" text="Show list of previous orders" />
-        <Line endX="458.0" endY="-1.52587890625E-5" layoutX="141.0" layoutY="161.0" startX="-141.99998474121094" startY="-1.52587890625E-5" />
+        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#logOut" text="logOut"/>
+        <Button layoutX="419.0" layoutY="13.0" mnemonicParsing="false" onMouseClicked="#showListOfFoods"
+                prefHeight="26.0" prefWidth="167.0" text="Show list of foods"/>
+        <Button layoutX="14.0" layoutY="59.0" mnemonicParsing="false" onMouseClicked="#showFinancialBalance"
+                text="Show financial Balance"/>
+        <Text fx:id="showFiancialBalanceTextField" layoutX="166.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text=""/>
+        <TextField fx:id="cartNumberTextFiled" layoutX="49.0" layoutY="187.0" promptText="cart number"/>
+        <Button layoutX="419.0" layoutY="51.0" mnemonicParsing="false" onMouseClicked="#showListOfPreviousOrders"
+                prefHeight="26.0" prefWidth="167.0" text="Show list of previous orders"/>
+        <Line endX="458.0" endY="-1.52587890625E-5" layoutX="141.0" layoutY="161.0" startX="-141.99998474121094"
+              startY="-1.52587890625E-5"/>
         <Text layoutX="14.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="increase financial balance">
             <font>
-                <Font size="16.0" />
+                <Font size="16.0"/>
             </font>
         </Text>
-        <TextField fx:id="valueTextField" layoutX="255.0" layoutY="187.0" promptText="value" />
-        <Button layoutX="477.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#increaseFinancialBalance" text="increase" />
-        <Line endX="500.00006103515625" endY="-1.52587890625E-5" layoutX="100.0" layoutY="234.0" startX="-100.0" />
+        <TextField fx:id="valueTextField" layoutX="255.0" layoutY="187.0" promptText="value"/>
+        <Button layoutX="477.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#increaseFinancialBalance"
+                text="increase"/>
+        <Line endX="500.00006103515625" endY="-1.52587890625E-5" layoutX="100.0" layoutY="234.0" startX="-100.0"/>
         <Text layoutX="12.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="change address">
             <font>
-                <Font size="16.0" />
+                <Font size="16.0"/>
             </font>
         </Text>
-        <Button layoutX="481.0" layoutY="256.0" mnemonicParsing="false" onMouseClicked="#changeAddress" text="change" />
-        <TextField fx:id="newAddressTextField" layoutX="50.0" layoutY="263.0" promptText="new address?" />
-        <Line endX="496.00006103515625" layoutX="104.0" layoutY="297.0" startX="-100.0" />
+        <Button layoutX="481.0" layoutY="256.0" mnemonicParsing="false" onMouseClicked="#changeAddress" text="change"/>
+        <TextField fx:id="newAddressTextField" layoutX="50.0" layoutY="263.0" promptText="new address?"/>
+        <Line endX="496.00006103515625" layoutX="104.0" layoutY="297.0" startX="-100.0"/>
         <Text layoutX="13.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="buy food">
             <font>
-                <Font size="14.0" />
+                <Font size="14.0"/>
             </font>
         </Text>
-        <TextField fx:id="foodNameTextField" layoutX="51.0" layoutY="330.0" promptText="food name" />
-        <Button layoutX="470.0" layoutY="330.0" mnemonicParsing="false" onMouseClicked="#buyFood" text="Buy" />
+        <TextField fx:id="foodNameTextField" layoutX="51.0" layoutY="330.0" promptText="food name"/>
+        <Button layoutX="470.0" layoutY="330.0" mnemonicParsing="false" onMouseClicked="#buyFood" text="Buy"/>
     </children>
 </AnchorPane>

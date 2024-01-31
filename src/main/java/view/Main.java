@@ -12,9 +12,21 @@ import model.Data;
 import java.net.URL;
 import java.util.Scanner;
 
+/**
+ * @author Sadegh Mohammadian
+ * advance programming course final project
+ */
+
 public class Main extends Application {
     public static Stage stage;
-    public static void main(String[] args){
+
+    /**
+     * this is the main menu of program
+     * load and download data occur in this class
+     * @param args
+     * customer can login from this menu
+     */
+    public static void main(String[] args) {
         Data.loadData();
         launch(args);
         Data.downLoadData();
@@ -23,9 +35,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Main.stage=stage;
-        URL url=Main.class.getResource("/FXML/Main.fxml");
-        AnchorPane anchorPane= FXMLLoader.load(url);
+        Main.stage = stage;
+        URL url = Main.class.getResource("/FXML/Main.fxml");
+        AnchorPane anchorPane = FXMLLoader.load(url);
         Scene scene = new Scene(anchorPane);
         stage.setScene(scene);
         stage.show();

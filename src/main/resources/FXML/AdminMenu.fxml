@@ -13,21 +13,27 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="view.AdminMenuController"
             prefHeight="400.0" prefWidth="600.0">
-    <Button layoutX="29.0" layoutY="23.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="82.0" text="Logout" onMouseClicked="#logOut" />
-    <Button layoutX="446.0" layoutY="23.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="125.0" text="List of all restaurants" onMouseClicked="#showListOfAllRestaurants"/>
+    <Button layoutX="29.0" layoutY="23.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="82.0" text="Logout"
+            onMouseClicked="#logOut"/>
+    <Button layoutX="446.0" layoutY="23.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="125.0"
+            text="List of all restaurants" onMouseClicked="#showListOfAllRestaurants"/>
     <TextField layoutX="111.0" layoutY="214.0" prefHeight="26.0" prefWidth="206.0" fx:id="nameTextField"/>
-    <Line endX="489.0" endY="-1.52587890625E-5" layoutX="111.0" layoutY="174.0" startX="-110.99998474121094" startY="-1.52587890625E-5" />
-    <Text layoutX="14.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new restaurant" wrappingWidth="206.39999999999986">
+    <Line endX="489.0" endY="-1.52587890625E-5" layoutX="111.0" layoutY="174.0" startX="-110.99998474121094"
+          startY="-1.52587890625E-5"/>
+    <Text layoutX="14.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new restaurant"
+          wrappingWidth="206.39999999999986">
         <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold" size="18.0"/>
         </font>
     </Text>
-    <Text layoutX="62.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" />
-    <Text layoutX="51.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" wrappingWidth="56.3511962890625" />
-    <Text layoutX="56.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address:" />
+    <Text layoutX="62.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:"/>
+    <Text layoutX="51.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:"
+          wrappingWidth="56.3511962890625"/>
+    <Text layoutX="56.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address:"/>
     <TextField layoutX="112.0" layoutY="258.0" prefHeight="26.0" prefWidth="206.0" fx:id="passwordPasswordField"/>
     <TextField layoutX="111.0" layoutY="303.0" prefHeight="26.0" prefWidth="206.0" fx:id="addressTextField"/>
     <Button layoutX="465.0" layoutY="267.0" mnemonicParsing="false" text="Add" onMouseClicked="#addNewRestaurant"/>
     <TextField layoutX="112.0" layoutY="347.0" prefHeight="26.0" prefWidth="206.0" fx:id="managerTextField"/>
-    <Text layoutX="51.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="manager:" wrappingWidth="56.3511962890625" />
+    <Text layoutX="51.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="manager:"
+          wrappingWidth="56.3511962890625"/>
 </AnchorPane>

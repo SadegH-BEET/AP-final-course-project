@@ -3,20 +3,26 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * this class is model customer
+ */
+
 public class Customer {
 
-    public static List<Customer> allCustomers=new ArrayList<>();
-    public static long idCounter=0;
-    public static Customer currentCustomer=null;
-
+    public static List<Customer> allCustomers = new ArrayList<>();
+    public static long idCounter = 0;
+    public static Customer currentCustomer = null;
+    /**
+     * customer class has id,name,password,address,financialBalance,previous orders attributes
+     */
 
     private long id;
     private String name;
     private String password;
     private String address;
-    private long financialBalance=0;
-    private List<Order> previousOrders=new ArrayList<>();
-    private List<Order> cart=new ArrayList<>();
+    private long financialBalance = 0;
+    private List<Order> previousOrders = new ArrayList<>();
+    private List<Order> cart = new ArrayList<>();
 
 
     public long getId() {
@@ -75,18 +81,23 @@ public class Customer {
         return financialBalance;
     }
 
-    public void changeAddress(String newAddress)
-    {
+    public void changeAddress(String newAddress) {
         this.setAddress(newAddress);
     }
 
-    public List<Order> viewPreviousPurchase(){
+    public List<Order> viewPreviousPurchase() {
         return this.previousOrders;
     }
 
-    public List<Food> showListOfFoods(){
+    public List<Food> showListOfFoods() {
         return Food.getListOfAllFoods();
     }
+
+    /**
+     * this method pay for a food if mony is enough
+     * @param order
+     * @return  this will say purchase is succesful or not
+     */
 
     public boolean payOrder(Order order) {
         long financBalance = this.getFinancialBalance();
@@ -101,20 +112,37 @@ public class Customer {
             return false;
     }
 
-    public void addPreviousOrder(Order order){
-        List<Order> previousOrder= this.getPreviousOrders();
+    /**
+     * this method update previous order list
+     * @param order
+     */
+
+    public void addPreviousOrder(Order order) {
+        List<Order> previousOrder = this.getPreviousOrders();
         previousOrder.add(order);
         this.setPreviousOrders(previousOrder);
     }
 
-    public void increaseFinancialBalance(long increaseValue){
-        long nowFinancialBalance=this.getFinancialBalance();
-        this.setFinancialBalance(increaseValue+nowFinancialBalance);
+    /**
+     * this method increase financialBalance of customer
+     * @param increaseValue
+     */
+
+    public void increaseFinancialBalance(long increaseValue) {
+        long nowFinancialBalance = this.getFinancialBalance();
+        this.setFinancialBalance(increaseValue + nowFinancialBalance);
     }
+
+    /**
+     * this method is customer constructor
+     * @param name
+     * @param password
+     * @param address
+     */
 
 
     public Customer(String name, String password, String address) {
-        this.id=idCounter;
+        this.id = idCounter;
         idCounter++;
         this.name = name;
         this.password = password;
@@ -122,54 +150,74 @@ public class Customer {
         allCustomers.add(this);
     }
 
-    public static void showListOfFood(){
+    /**
+     * this method print list of all foods in terminal
+     */
+
+    public static void showListOfFood() {
         System.out.println("=====================");
         System.out.println("Foodlist:");
-        for (int i=0;i<Food.listOfAllFoods.size();i++){
-            System.out.print(i+1);
+        for (int i = 0; i < Food.listOfAllFoods.size(); i++) {
+            System.out.print(i + 1);
             System.out.println(
-                    " foodname: " + Food.listOfAllFoods.get(i).getName()+
-                    " foodcost: " + Food.listOfAllFoods.get(i).getCost()+
-                    " restaurantname: " + Food.listOfAllFoods.get(i).getRestaurant().getName());
+                    " foodname: " + Food.listOfAllFoods.get(i).getName() +
+                            " foodcost: " + Food.listOfAllFoods.get(i).getCost() +
+                            " restaurantname: " + Food.listOfAllFoods.get(i).getRestaurant().getName());
         }
         System.out.println("=====================");
     }
 
-    public static void showPreviousOrders(Customer customer){
+    /**
+     * this method print customer previous orders in terminal
+     * @param customer
+     */
+
+    public static void showPreviousOrders(Customer customer) {
         System.out.println("=====================");
         System.out.println("previous order");
-        for (int i=0;i<customer.getPreviousOrders().size();i++){
+        for (int i = 0; i < customer.getPreviousOrders().size(); i++) {
             System.out.println(i +
-                    " food name " + customer.getPreviousOrders().get(i).getFood().getName()+
-                    " food cost " + customer.getPreviousOrders().get(i).getFood().getCost()+
+                    " food name " + customer.getPreviousOrders().get(i).getFood().getName() +
+                    " food cost " + customer.getPreviousOrders().get(i).getFood().getCost() +
                     " restaurant name " + customer.getPreviousOrders().get(i).getFood().getRestaurant().getName());
         }
         System.out.println("=====================");
     }
 
-    public static void showCart(Customer customer){
+    public static void showCart(Customer customer) {
         System.out.println("=====================");
         System.out.println("Food Cart");
-        for (int i=0;i<customer.getCart().size();i++){
+        for (int i = 0; i < customer.getCart().size(); i++) {
             System.out.println(i +
-                    " food name " + customer.getCart().get(i).getFood().getName()+
-                    " food cost " + customer.getCart().get(i).getFood().getCost()+
+                    " food name " + customer.getCart().get(i).getFood().getName() +
+                    " food cost " + customer.getCart().get(i).getFood().getCost() +
                     " restaurant name " + customer.getCart().get(i).getFood().getRestaurant().getName());
         }
         System.out.println("=====================");
     }
 
-    public static Customer searchCustomertById(long customerId)
-    {
+    /**
+     * this method search Customer by ID
+     * @param customerId
+     * @return
+     */
+
+    public static Customer searchCustomertById(long customerId) {
         int index = 0;
         for (int i = 0; i < allCustomers.size(); i++) {
-            if (allCustomers.get(i).id==customerId ){
+            if (allCustomers.get(i).id == customerId) {
                 index = i;
                 break;
             }
         }
         return allCustomers.get(index);
     }
+
+    /**
+     * this method search customer by name
+     * @param customerName
+     * @return
+     */
 
     public static Customer searchCustomerByName(String customerName) {
         int index = 0;

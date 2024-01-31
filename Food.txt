@@ -1,7 +1,16 @@
-2
+5
 baghaly
 12
 rozgol
 pizza
 20
 rozgol
+piaz
+5
+rozgol
+addas
+5
+rozgol
+kabab
+50
+Rozgol

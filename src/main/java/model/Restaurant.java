@@ -3,25 +3,35 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Restaurant {
-    public static List<Restaurant> allRestaurants=new ArrayList<>();
-    public static long idcounter=0;
-    public static Restaurant currentRestaurant=null;
+/**
+ * this class is model restaurant
+ */
 
-    public static List<Restaurant> getListOfRestaurants(){
+public class Restaurant {
+
+    public static List<Restaurant> allRestaurants = new ArrayList<>();
+    public static long idcounter = 0;
+    public static Restaurant currentRestaurant = null;
+
+    public static List<Restaurant> getListOfRestaurants() {
         return allRestaurants;
     }
+
+    /**
+     * restaurant have name,manager,password,address,financialBalance,food menu and previous order states
+     */
+
     private long id;
     private String name;
     private String manager;
     private String password;
     private String address;
-    private long financialBalance=0;
-    private List<Food> foodMennu =new ArrayList<>();
-    private List<Order> previousOrder=new ArrayList<>();
+    private long financialBalance = 0;
+    private List<Food> foodMennu = new ArrayList<>();
+    private List<Order> previousOrder = new ArrayList<>();
 
     public Restaurant(String name, String manager, String address, String password) {
-        this.id=idcounter;
+        this.id = idcounter;
         idcounter++;
         this.name = name;
         this.manager = manager;
@@ -39,6 +49,12 @@ public class Restaurant {
     public void setId(long id) {
         this.id = id;
     }
+
+    /**
+     * by this method you can search restaurant by name
+     * @param name
+     * @return
+     */
 
     public static Restaurant searchRestaurantByName(String name) {
         int index = 0;
@@ -115,48 +131,75 @@ public class Restaurant {
         return previousOrder;
     }
 
-    public void changeAddress(String newAddress)
-    {
+    public void changeAddress(String newAddress) {
         this.setAddress(newAddress);
     }
 
-    public void removeFromFoodMenu(Food food){
-        List<Food> foodmenu=this.getFoodMennu();
+    public void removeFromFoodMenu(Food food) {
+        List<Food> foodmenu = this.getFoodMennu();
         foodmenu.remove(food);
         this.setFoodMennu(foodmenu);
     }
-    public void addToFoodMenu(Food food){
-        List<Food> foodmenu=this.getFoodMennu();
+
+    public void addToFoodMenu(Food food) {
+        List<Food> foodmenu = this.getFoodMennu();
         foodmenu.add(food);
         this.setFoodMennu(foodmenu);
     }
-    public void increasFinancialBalance(long increaseValue){
-        this.financialBalance=this.getFinancialBalance()+increaseValue;
+
+    /**
+     * this method increase financial Balance of restaurant
+     * @param increaseValue
+     */
+
+    public void increasFinancialBalance(long increaseValue) {
+        this.financialBalance = this.getFinancialBalance() + increaseValue;
     }
-    public List<Food> ShowRestaurantMenu(){
+
+    /**
+     * this method show food menu of restaurant
+     * @return
+     */
+
+    public List<Food> ShowRestaurantMenu() {
         return this.foodMennu;
     }
-    public void withdrawFinancialBalnce(String numcart,long value){
-        this.setFinancialBalance(this.getFinancialBalance()-value);
-    }
-    public void printFoodMenu(){
-        System.out.println("==============================");
-        System.out.println(this.name +" restaurant food menu");
-        for(int i=0;i<this.foodMennu.size();i++){
 
-            System.out.println(i+
-                    " food name: "+foodMennu.get(i).getName()+
-                    " cost: "+foodMennu.get(i).getCost());
+    /**
+     * this withdraw money to restaurant manager cart
+     * @param numcart
+     * @param value
+     */
+
+    public void withdrawFinancialBalnce(String numcart, long value) {
+        this.setFinancialBalance(this.getFinancialBalance() - value);
+    }
+
+    /**
+     * this method print food menu in terminal
+     */
+
+    public void printFoodMenu() {
+        System.out.println("==============================");
+        System.out.println(this.name + " restaurant food menu");
+        for (int i = 0; i < this.foodMennu.size(); i++) {
+
+            System.out.println(i +
+                    " food name: " + foodMennu.get(i).getName() +
+                    " cost: " + foodMennu.get(i).getCost());
         }
         System.out.println("==============================");
     }
 
+    /**
+     * this method print previous orders of restaurant in terminal
+     */
 
     public void printPreviousOrder() {
         System.out.println("==============================");
-        System.out.println(this.name +" restaurant previous orders");
-        for(int i=0;i<this.previousOrder.size();i++){
-            System.out.println(i+
+        System.out.println(this.name + " restaurant previous orders");
+        for (int i = 0; i < this.previousOrder.size(); i++) {
+            System.out.println(i +
                     " food name " + previousOrder.get(i).getFood().getName());
         }
         System.out.println("==============================");
@@ -164,13 +207,19 @@ public class Restaurant {
 
     }
 
+    /**
+     * this method search restaurant food menu by food name
+     * @param foodName
+     * @return
+     */
+
     public Food searchFoodMenu(String foodName) {
-        int index=0;
-        boolean found=false;
-        for (int i=0;i<this.getFoodMennu().size();i++){
-            if(this.getFoodMennu().get(i).equals(foodName)){
-                index=i;
-                found=true;
+        int index = 0;
+        boolean found = false;
+        for (int i = 0; i < this.getFoodMennu().size(); i++) {
+            if (this.getFoodMennu().get(i).equals(foodName)) {
+                index = i;
+                found = true;
                 break;
             }
         }
@@ -181,7 +230,7 @@ public class Restaurant {
     public static Restaurant searchRestaurantById(long restaurantId) {
         int index = 0;
         for (int i = 0; i < allRestaurants.size(); i++) {
-            if (Restaurant.allRestaurants.get(i).id==restaurantId ){
+            if (Restaurant.allRestaurants.get(i).id == restaurantId) {
                 index = i;
                 break;
             }
@@ -190,8 +239,13 @@ public class Restaurant {
 
     }
 
-    public void addPreviousOrder(Order order){
-        List<Order> previousOrder= this.getPreviousOrder();
+    /**
+     * this method update restaurant previous order
+     * @param order
+     */
+
+    public void addPreviousOrder(Order order) {
+        List<Order> previousOrder = this.getPreviousOrder();
         previousOrder.add(order);
         this.setPreviousOrder(previousOrder);
     }

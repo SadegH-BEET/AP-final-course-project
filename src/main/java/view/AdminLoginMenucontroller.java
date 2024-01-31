@@ -6,6 +6,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import model.Admin;
 
+/**
+ * this class is for admin login menu controller
+ */
+
 public class AdminLoginMenucontroller {
     public javafx.scene.control.TextField TextField;
     public javafx.scene.control.PasswordField PasswordField;
@@ -19,14 +23,13 @@ public class AdminLoginMenucontroller {
     }
 
     public void AdminLogin(MouseEvent mouseEvent) throws Exception {
-        String name=TextField.getText();
-        String password=PasswordField.getText();
-        if(name.equals(Admin.getName()) && password.equals(Admin.getPassword())){
+        String name = TextField.getText();
+        String password = PasswordField.getText();
+        if (name.equals(Admin.getName()) && password.equals(Admin.getPassword())) {
             new AdminMenu().start(Main.stage);
 
-        }
-        else {
-            Alert alert=new Alert(Alert.AlertType.ERROR);
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("Wrong password!");
             alert.showAndWait();
         }

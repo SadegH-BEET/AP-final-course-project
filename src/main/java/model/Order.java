@@ -1,8 +1,14 @@
 package model;
 
-import java.util.List;
+
+/**
+ * this class is model order
+ */
 
 public class Order {
+    /**
+     * model class has food,Customer, and restaurant states
+     */
 
     private Food food;
     private Customer customer;
@@ -33,7 +39,7 @@ public class Order {
         this.restaurant = restaurant;
     }
 
-    public Order(Food food, Customer customer,Restaurant restaurant) {
+    public Order(Food food, Customer customer, Restaurant restaurant) {
         this.food = food;
         this.customer = customer;
         this.restaurant = food.getRestaurant();

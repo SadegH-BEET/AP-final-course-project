@@ -6,6 +6,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import model.Restaurant;
 
+/**
+ * this class is for admin menu controller
+ */
+
 public class AdminMenuController {
 
 
@@ -19,11 +23,11 @@ public class AdminMenuController {
         System.out.println("==============================");
         System.out.println("List of All restaurants:");
 
-        for (int i=0;i< Restaurant.allRestaurants.size();i++){
-            System.out.print(i+1);
-            System.out.print(" Name: "+Restaurant.allRestaurants.get(i).getName()+
-                    "  Password: "+Restaurant.allRestaurants.get(i).getPassword()+
-                    "  Manager: "+Restaurant.allRestaurants.get(i).getManager());
+        for (int i = 0; i < Restaurant.allRestaurants.size(); i++) {
+            System.out.print(i + 1);
+            System.out.print(" Name: " + Restaurant.allRestaurants.get(i).getName() +
+                    "  Password: " + Restaurant.allRestaurants.get(i).getPassword() +
+                    "  Manager: " + Restaurant.allRestaurants.get(i).getManager());
             System.out.println();
         }
         System.out.println("==============================");
@@ -34,16 +38,15 @@ public class AdminMenuController {
     }
 
     public void addNewRestaurant(MouseEvent mouseEvent) {
-        String name=nameTextField.getText();
-        String password=passwordPasswordField.getText();
-        String address=addressTextField.getText();
-        String managerName=managerTextField.getText();
-        if(name!="" && password!="" && address!="" && managerName!=""){
-            Restaurant restaurant=new Restaurant(name,managerName,address,password);
+        String name = nameTextField.getText();
+        String password = passwordPasswordField.getText();
+        String address = addressTextField.getText();
+        String managerName = managerTextField.getText();
+        if (name != "" && password != "" && address != "" && managerName != "") {
+            Restaurant restaurant = new Restaurant(name, managerName, address, password);
 
-        }
-        else{
-            Alert alert=new Alert(Alert.AlertType.ERROR);
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("please fill the blanks");
             alert.showAndWait();
         }

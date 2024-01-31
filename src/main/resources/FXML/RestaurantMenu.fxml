@@ -15,43 +15,51 @@
             prefHeight="400.0" prefWidth="600.0">
     <children>
         <Button layoutX="24.0" layoutY="14.0" mnemonicParsing="false" text="Logout" onMouseClicked="#logOut"/>
-        <Button layoutX="447.0" layoutY="13.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" text="show food menu" onMouseClicked="#showFoods"/>
-        <Button layoutX="447.0" layoutY="56.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" text="Show previous orders" onMouseClicked="#showPreviousOrder"/>
-        <Button layoutX="24.0" layoutY="56.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" text="show financial balance" onMouseClicked="#showFinancialBalance"/>
-        <Text layoutX="186.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="79.73675537109375"  text="" fx:id="showFinancialBalanceField">
+        <Button layoutX="447.0" layoutY="13.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0"
+                text="show food menu" onMouseClicked="#showFoods"/>
+        <Button layoutX="447.0" layoutY="56.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0"
+                text="Show previous orders" onMouseClicked="#showPreviousOrder"/>
+        <Button layoutX="24.0" layoutY="56.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0"
+                text="show financial balance" onMouseClicked="#showFinancialBalance"/>
+        <Text layoutX="186.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="79.73675537109375"
+              text="" fx:id="showFinancialBalanceField">
             <font>
-                <Font size="19.0" />
+                <Font size="19.0"/>
             </font>
         </Text>
-        <Line endX="499.0" endY="-1.52587890625E-5" layoutX="101.0" layoutY="138.0" startX="-100.0" />
-        <Text layoutX="14.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new food" wrappingWidth="104.53668212890625">
+        <Line endX="499.0" endY="-1.52587890625E-5" layoutX="101.0" layoutY="138.0" startX="-100.0"/>
+        <Text layoutX="14.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new food"
+              wrappingWidth="104.53668212890625">
             <font>
-                <Font size="16.0" />
+                <Font size="16.0"/>
             </font>
         </Text>
         <TextField layoutX="78.0" layoutY="163.0" promptText="food name" fx:id="foodNameTextField"/>
         <TextField layoutX="300.0" layoutY="160.0" promptText="cost" fx:id="foodCostTextField"/>
         <Button layoutX="499.0" layoutY="160.0" mnemonicParsing="false" text="Add" onMouseClicked="#addNewFood"/>
-        <Text layoutX="14.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" />
-        <Text layoutX="252.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost:" />
-        <Line endX="499.0" endY="-1.52587890625E-5" layoutX="101.0" layoutY="229.0" startX="-100.0" />
-        <Text layoutX="7.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change address" wrappingWidth="118.93671035766602">
+        <Text layoutX="14.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:"/>
+        <Text layoutX="252.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost:"/>
+        <Line endX="499.0" endY="-1.52587890625E-5" layoutX="101.0" layoutY="229.0" startX="-100.0"/>
+        <Text layoutX="7.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change address"
+              wrappingWidth="118.93671035766602">
             <font>
-                <Font size="16.0" />
+                <Font size="16.0"/>
             </font>
         </Text>
         <TextField layoutX="78.0" layoutY="268.0" promptText="new address" fx:id="newAddressTextField"/>
-        <Text layoutX="4.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New address:" />
+        <Text layoutX="4.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New address:"/>
         <Button layoutX="491.0" layoutY="268.0" mnemonicParsing="false" text="change" onMouseClicked="#changeAddress"/>
-        <Line endX="491.0" layoutX="109.0" layoutY="318.0" startX="-108.99998474121094" />
-        <Text layoutX="6.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Withdraw financial balance" wrappingWidth="224.53666687011724">
+        <Line endX="491.0" layoutX="109.0" layoutY="318.0" startX="-108.99998474121094"/>
+        <Text layoutX="6.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Withdraw financial balance"
+              wrappingWidth="224.53666687011724">
             <font>
-                <Font size="17.0" />
+                <Font size="17.0"/>
             </font>
         </Text>
-        <Text layoutX="5.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cart number:" />
+        <Text layoutX="5.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cart number:"/>
         <TextField layoutX="72.0" layoutY="354.0" promptText="cart number" fx:id="cartNumberTextField"/>
-        <Button layoutX="485.0" layoutY="346.0" mnemonicParsing="false" text="Withdraw" onMouseClicked="#withdrawFinancialBalance"/>
+        <Button layoutX="485.0" layoutY="346.0" mnemonicParsing="false" text="Withdraw"
+                onMouseClicked="#withdrawFinancialBalance"/>
     </children>
 
 </AnchorPane>
