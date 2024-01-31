@@ -22,14 +22,6 @@ public class Food {
         listOfAllFoods.add(this);
 
     }
-    public static Food findFoodByName(String name){
-    for(int i=0;i<Food.listOfAllFoods.size();i++){
-        if(name.equals(Food.listOfAllFoods.get(i).getName())){
-            return Food.listOfAllFoods.get(i);
-        }
-    }
-    return null;
-    }
 
     public static List<Food> getListOfAllFoods() {
         return listOfAllFoods;
@@ -39,16 +31,6 @@ public class Food {
         Food.listOfAllFoods = listOfAllFoods;
     }
 
-    public static Food searchFoodById(long foodId) {
-        int index = 0;
-        for (int i = 0; i < listOfAllFoods.size(); i++) {
-            if (listOfAllFoods.get(i).id==foodId ){
-                index = i;
-                break;
-            }
-        }
-        return listOfAllFoods.get(index);
-    }
 
     public long getId() {
         return id;
@@ -80,6 +62,38 @@ public class Food {
 
     public void setRestaurant(Restaurant restaurant) {
         this.restaurant = restaurant;
+    }
+
+    public static Food findFoodByName(String name){
+        for(int i=0;i<Food.listOfAllFoods.size();i++){
+            if(name.equals(Food.listOfAllFoods.get(i).getName())){
+                return Food.listOfAllFoods.get(i);
+            }
+        }
+        return null;
+    }
+
+
+    public static Food searchFoodByName(String foodName) {
+        int index=0;
+        for(int i=0;i<listOfAllFoods.size();i++){
+            if (listOfAllFoods.get(i).getName().equals(foodName)){
+                index=i;
+                break;
+            }
+        }
+        return listOfAllFoods.get(index);
+    }
+
+    public static Food searchFoodById(long foodId) {
+        int index = 0;
+        for (int i = 0; i < listOfAllFoods.size(); i++) {
+            if (listOfAllFoods.get(i).id==foodId ){
+                index = i;
+                break;
+            }
+        }
+        return listOfAllFoods.get(index);
     }
 
 }

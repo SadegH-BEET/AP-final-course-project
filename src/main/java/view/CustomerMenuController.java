@@ -59,7 +59,11 @@ public class CustomerMenuController {
         if(food != null){
             Restaurant restaurant=food.getRestaurant();
             Order order =new Order(food,Customer.currentCustomer,restaurant);
-            if (Customer.currentCustomer.payOrder(order)){
+            if (Customer.currentCustomer.getFinancialBalance()>=food.getCost()){
+                Customer.currentCustomer.setFinancialBalance(Customer.currentCustomer.getFinancialBalance()-food.getCost());
+                restaurant.setFinancialBalance(restaurant.getFinancialBalance()+food.getCost());
+                Customer.currentCustomer.getPreviousOrders().add(order);
+                restaurant.getPreviousOrder().add(order);
                 showFiancialBalanceTextField.setText(String.valueOf(Customer.currentCustomer.getFinancialBalance()));
 
             }
@@ -76,4 +80,27 @@ public class CustomerMenuController {
         }
 
     }
+
+    /*public void addToCart(MouseEvent mouseEvent) {
+        String nameFood=foodNameTextField.getText();
+
+        Customer.currentCustomer.getCart().add(order);
+    }*/
+
+   /* public void removeFromCart(MouseEvent mouseEvent) {
+        String foodName=foodNameTextField.getText();
+        Food food = Food.findFoodByName(foodName);
+        if(food != null){
+            for(int i=0;i<Customer.currentCustomer.getCart().size();i++){
+                if(Customer.currentCustomer.getCart().get(i).getFood().getName().equals(foodName))
+                    Customer.currentCustomer.getCart().remove(i);
+            }
+
+        }
+        else{
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("NO matching food in cart!");
+        }
+
+    }*/
 }

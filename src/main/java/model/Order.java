@@ -8,14 +8,6 @@ public class Order {
     private Customer customer;
     private Restaurant restaurant;
 
-    public Order(Food food, Customer customer,Restaurant restaurant) {
-        this.food = food;
-        this.customer = customer;
-        this.restaurant = food.getRestaurant();
-        List<Order> cart=this.customer.getCart();
-        cart.add(this);
-        customer.setCart(cart);
-    }
 
     public Food getFood() {
         return food;
@@ -41,4 +33,12 @@ public class Order {
         this.restaurant = restaurant;
     }
 
+    public Order(Food food, Customer customer,Restaurant restaurant) {
+        this.food = food;
+        this.customer = customer;
+        this.restaurant = food.getRestaurant();
+        List<Order> cart=this.customer.getCart();
+        cart.add(this);
+        customer.setCart(cart);
+    }
 }

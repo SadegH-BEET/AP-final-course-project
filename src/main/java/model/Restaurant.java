@@ -31,17 +31,6 @@ public class Restaurant {
 
     }
 
-    public static Restaurant searchRestaurantById(long restaurantId) {
-        int index = 0;
-        for (int i = 0; i < allRestaurants.size(); i++) {
-            if (Restaurant.allRestaurants.get(i).id==restaurantId ){
-                index = i;
-                break;
-            }
-        }
-        return Restaurant.allRestaurants.get(index);
-
-    }
 
     public long getId() {
         return id;
@@ -66,11 +55,9 @@ public class Restaurant {
         return password;
     }
 
-
     public static void setAllRestaurants(List<Restaurant> allRestaurants) {
         Restaurant.allRestaurants = allRestaurants;
     }
-
 
     public void setPassword(String password) {
         this.password = password;
@@ -128,15 +115,11 @@ public class Restaurant {
         return previousOrder;
     }
 
-    public void addPreviousOrder(Order order){
-        List<Order> previousOrder= this.getPreviousOrder();
-        previousOrder.add(order);
-        this.setPreviousOrder(previousOrder);
-    }
     public void changeAddress(String newAddress)
     {
         this.setAddress(newAddress);
     }
+
     public void removeFromFoodMenu(Food food){
         List<Food> foodmenu=this.getFoodMennu();
         foodmenu.remove(food);
@@ -180,4 +163,38 @@ public class Restaurant {
 
 
     }
+
+    public Food searchFoodMenu(String foodName) {
+        int index=0;
+        boolean found=false;
+        for (int i=0;i<this.getFoodMennu().size();i++){
+            if(this.getFoodMennu().get(i).equals(foodName)){
+                index=i;
+                found=true;
+                break;
+            }
+        }
+        return this.foodMennu.get(index);
+
+    }
+
+    public static Restaurant searchRestaurantById(long restaurantId) {
+        int index = 0;
+        for (int i = 0; i < allRestaurants.size(); i++) {
+            if (Restaurant.allRestaurants.get(i).id==restaurantId ){
+                index = i;
+                break;
+            }
+        }
+        return Restaurant.allRestaurants.get(index);
+
+    }
+
+    public void addPreviousOrder(Order order){
+        List<Order> previousOrder= this.getPreviousOrder();
+        previousOrder.add(order);
+        this.setPreviousOrder(previousOrder);
+    }
+
+
 }

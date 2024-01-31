@@ -65,11 +65,13 @@ public class RestaurantMenuController {
     }
 
     public void showFoods(MouseEvent mouseEvent) {
-        //Restaurant.currentRestaurant.printFoodMenu();
+
+        System.out.println("==============================");
         for(int i=0;i<Restaurant.currentRestaurant.getFoodMennu().size();i++){
             System.out.print(i+1);
             System.out.println(" foodname: " + Restaurant.currentRestaurant.getFoodMennu().get(i).getName() +
                                 " cost " + Restaurant.currentRestaurant.getFoodMennu().get(i).getCost());
         }
+        System.out.println("==============================");
     }
 }

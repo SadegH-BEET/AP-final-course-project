@@ -52,40 +52,19 @@ public class Data {
             int count=Integer.parseInt(line);
             for(int i=0;i<count;i++){
 
-                String name= reader.readLine();
-                long cost=  Long.parseLong(reader.readLine());
-                long restaurantId= Long.parseLong(reader.readLine());
-                Restaurant restaurant= Restaurant.searchRestaurantById(restaurantId);
-                System.out.println("Id:" + restaurantId +restaurant.getName());
+                String name = reader.readLine();
+                long cost =  Long.parseLong(reader.readLine());
+                String restaurantName= reader.readLine();
+                Restaurant restaurant= Restaurant.searchRestaurantByName(restaurantName);
                 Food food=new Food(name,cost,restaurant);
+                restaurant.addToFoodMenu(food);
 
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        filePath = "customercart.txt";
-        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
-            String line;
-            line = reader.readLine();
-            int count=Integer.parseInt(line);
-            for(int i=0;i<count;i++){
 
-                long foodId= Long.parseLong(reader.readLine());
-                long customerId= Long.parseLong(reader.readLine());
-                long restaurantId= Long.parseLong(reader.readLine());
-                Restaurant restaurant= Restaurant.searchRestaurantById(restaurantId);
-                Customer customer= Customer.searchCustomertById(customerId);
-                Food food=Food.searchFoodById(foodId);
-                Order order=new Order(food,customer,restaurant);
-                List<Order> custCart=customer.getCart();
-                custCart.add(order);
-                customer.setCart(custCart);
-
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
         filePath = "customerpreviousorder.txt";
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
@@ -94,16 +73,17 @@ public class Data {
             int count=Integer.parseInt(line);
             for(int i=0;i<count;i++){
 
-                long foodId= Long.parseLong(reader.readLine());
-                long customerId= Long.parseLong(reader.readLine());
-                long restaurantId= Long.parseLong(reader.readLine());
-                Restaurant restaurant= Restaurant.searchRestaurantById(restaurantId);
-                Customer customer= Customer.searchCustomertById(customerId);
-                Food food=Food.searchFoodById(foodId);
-                Order order=new Order(food,customer,restaurant);
-                List<Order> custPreOrd=customer.getPreviousOrders();
-                custPreOrd.add(order);
-                customer.setPreviousOrders(custPreOrd);
+                String foodName= reader.readLine();
+                String customerName= reader.readLine();
+                String restaurantName= reader.readLine();
+                Restaurant restaurant= Restaurant.searchRestaurantByName(restaurantName);
+                Customer customer= Customer.searchCustomerByName(customerName);
+                if(restaurant.searchFoodMenu(foodName)!=null){
+                    Food food=restaurant.searchFoodMenu(foodName);
+                    Order order=new Order(food,customer,restaurant);
+                    List<Order> custPre=customer.getPreviousOrders();
+                    custPre.add(order);
+                    customer.setCart(custPre);}
 
             }
         } catch (IOException e) {
@@ -117,24 +97,23 @@ public class Data {
             int count=Integer.parseInt(line);
             for(int i=0;i<count;i++){
 
-                long foodId= Long.parseLong(reader.readLine());
-                long customerId= Long.parseLong(reader.readLine());
-                long restaurantId= Long.parseLong(reader.readLine());
-                Restaurant restaurant= Restaurant.searchRestaurantById(restaurantId);
-                Customer customer= Customer.searchCustomertById(customerId);
-                Food food=Food.searchFoodById(foodId);
-                Order order=new Order(food,customer,restaurant);
-                List<Order> resPreOrd=restaurant.getPreviousOrder();
-                resPreOrd.add(order);
-                customer.setPreviousOrders(resPreOrd);
+                String foodName= reader.readLine();
+                String customerName= reader.readLine();
+                String restaurantName= reader.readLine();
+                Restaurant restaurant= Restaurant.searchRestaurantByName(restaurantName);
+                Customer customer= Customer.searchCustomerByName(customerName);
+                if(restaurant.searchFoodMenu(foodName)!=null){
+                    Food food=restaurant.searchFoodMenu(foodName);
+                    Order order=new Order(food,customer,restaurant);
+                    List<Order> resPre=restaurant.getPreviousOrder();
+                    resPre.add(order);
+                    customer.setCart(resPre);}
 
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(Restaurant.allRestaurants);
-        System.out.println(Food.listOfAllFoods);
-        System.out.println(Customer.allCustomers);
+
 
 
     }
@@ -191,7 +170,7 @@ public class Data {
                 writer.newLine();
                 writer.write(String.valueOf(Food.getListOfAllFoods().get(i).getCost()));
                 writer.newLine();
-                writer.write(String.valueOf(Food.getListOfAllFoods().get(i).getRestaurant().getId()));
+                writer.write(Food.getListOfAllFoods().get(i).getRestaurant().getName());
                 writer.newLine();
 
             }
@@ -200,47 +179,23 @@ public class Data {
             e.printStackTrace();
         }
 
-        filePath="customercart.txt";
-
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
-            int count=0;
-            for (int i=0;i<Customer.allCustomers.size();i++){
-                count+=Customer.allCustomers.get(i).getCart().size();
-            }
-            writer.write(String.valueOf(count));
-            writer.newLine();
-            for (int i=0;i<Customer.allCustomers.size();i++){
-                Customer customer=Customer.allCustomers.get(i);
-                for(int j=0;j<customer.getCart().size();j++){
-                    writer.write(String.valueOf(customer.getCart().get(j).getFood().getId()));
-                    writer.newLine();
-                    writer.write(String.valueOf(customer.getCart().get(j).getCustomer().getId()));
-                    writer.newLine();
-                    writer.write(String.valueOf(customer.getCart().get(j).getRestaurant().getId()));
-                    writer.newLine();
-                }
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         filePath="customerpreviousorder.txt";
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             int count=0;
             for (int i=0;i<Customer.allCustomers.size();i++){
-                count+=Customer.allCustomers.get(i).getCart().size();
+                count+=Customer.allCustomers.get(i).getPreviousOrders().size();
             }
             writer.write(String.valueOf(count));
             writer.newLine();
             for (int i=0;i<Customer.allCustomers.size();i++){
                 Customer customer=Customer.allCustomers.get(i);
-                for(int j=0;j<customer.getCart().size();j++){
-                    writer.write(String.valueOf(customer.getCart().get(j).getFood().getId()));
+                for(int j=0;j<customer.getPreviousOrders().size();j++){
+                    writer.write(customer.getPreviousOrders().get(j).getFood().getName());
                     writer.newLine();
-                    writer.write(String.valueOf(customer.getCart().get(j).getCustomer().getId()));
+                    writer.write(customer.getPreviousOrders().get(j).getCustomer().getName());
                     writer.newLine();
-                    writer.write(String.valueOf(customer.getCart().get(j).getRestaurant().getId()));
+                    writer.write(customer.getPreviousOrders().get(j).getRestaurant().getName());
                     writer.newLine();
                 }
             }
@@ -252,19 +207,19 @@ public class Data {
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             int count=0;
-            for (int i=0;i<Customer.allCustomers.size();i++){
-                count+=Customer.allCustomers.get(i).getCart().size();
+            for (int i=0;i<Restaurant.allRestaurants.size();i++){
+                count+=Restaurant.allRestaurants.get(i).getPreviousOrder().size();
             }
             writer.write(String.valueOf(count));
             writer.newLine();
-            for (int i=0;i<Customer.allCustomers.size();i++){
-                Customer customer=Customer.allCustomers.get(i);
-                for(int j=0;j<customer.getCart().size();j++){
-                    writer.write(String.valueOf(customer.getCart().get(j).getFood().getId()));
+            for (int i=0;i<Restaurant.allRestaurants.size();i++){
+                Restaurant restaurant=Restaurant.allRestaurants.get(i);
+                for(int j=0;j<restaurant.getPreviousOrder().size();j++){
+                    writer.write(restaurant.getPreviousOrder().get(j).getFood().getName());
                     writer.newLine();
-                    writer.write(String.valueOf(customer.getCart().get(j).getCustomer().getId()));
+                    writer.write(restaurant.getPreviousOrder().get(j).getCustomer().getName());
                     writer.newLine();
-                    writer.write(String.valueOf(customer.getCart().get(j).getRestaurant().getId()));
+                    writer.write(restaurant.getPreviousOrder().get(j).getRestaurant().getName());
                     writer.newLine();
                 }
             }
